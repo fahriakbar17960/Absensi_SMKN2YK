@@ -4,9 +4,19 @@
     "api/*.php": {
       "runtime": "vercel-php@0.7.1"
     },
-    "*.php": {
+    "dashboard.php": {
+      "runtime": "vercel-php@0.7.1"
+    },
+    "index.php": {
+      "runtime": "vercel-php@0.7.1"
+    },
+    "check_enroll_status.php": {
+      "runtime": "vercel-php@0.7.1"
+    },
+    "update_status.php": {
       "runtime": "vercel-php@0.7.1"
     }
+    // Tambahkan file PHP lain yang kamu pakai di sini jika ada
   },
   "rewrites": [
     { "source": "/dashboard", "destination": "/dashboard.php" },
