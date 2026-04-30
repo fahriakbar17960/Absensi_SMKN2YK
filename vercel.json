@@ -1,12 +1,21 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
     "api/*.php": {
       "runtime": "vercel-php@0.7.1"
+    },
+    "*.php": {
+      "runtime": "vercel-php@0.7.1"
     }
   },
-  "routes": [
-    { "src": "/api/(.*).php", "dest": "/api/$1.php" },
-    { "src": "/(.*).png", "dest": "/$1.png" },
-    { "src": "/(.*)", "dest": "/api/index.php" }
+  "rewrites": [
+    { "source": "/dashboard", "destination": "/dashboard.php" },
+    { "source": "/dashboard/(.*)", "destination": "/dashboard.php" },
+
+    { "source": "/api/(.*)", "destination": "/api/$1.php" },
+
+    { "source": "/(.*)\\.png$", "destination": "/$1.png" },
+
+    { "source": "/(.*)", "destination": "/index.php" }
   ]
 }
